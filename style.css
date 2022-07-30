@@ -70,9 +70,11 @@ h1{
 }
 
 .cell.x::before,
-.cell.x::after,
-.cell.circle::before {
+.cell.x::after {
     background-color: black;
+}
+.cell.circle::before{
+    background-color: brown;
 }
 
 .board.x .cell:not(.x):not(.circle):hover::before,
@@ -156,4 +158,28 @@ h1{
 
 .winning-message.show {
     display: flex;
+}
+
+.gameChoice {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 2rem;
+    font-family: var(--font-family);
+}
+.hidden{
+    display: none;
+    /* Toggle class remove on click*/
 }

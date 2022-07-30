@@ -15,10 +15,31 @@ const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
 const restartButton = document.getElementById('restartButton')
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
+const pvpGameButton = document.getElementById('pvp')
+const gameChoice = document.querySelector('.gameChoice')
+const menuButton = document.getElementById("menu")
 let circleTurn
 
-startGame();
-restartButton.addEventListener("click", startGame)
+
+pvpGameButton.addEventListener('click', () => {
+    loadGame()
+    menuButton.addEventListener('click', loadMenu)
+    restartButton.addEventListener('click', startGame)
+})
+
+
+
+function loadGame(){
+    gameChoice.classList.add('hidden')
+    board.classList.remove('hidden')
+    startGame()
+}
+function loadMenu(){
+    gameChoice.classList.remove('hidden')
+    board.classList.add('hidden')
+    startGame()
+}
+
 
 function startGame(){
     circleTurn = false
@@ -30,7 +51,6 @@ function startGame(){
     })
     setBoardHoverClass()
     winningMessageElement.classList.remove("show")
-
 }
 
 function handleClick(e) {
@@ -44,12 +64,7 @@ function handleClick(e) {
     } else {
         swapTurns()
         setBoardHoverClass()
-    }
-    // PlaceMark 
-    // check for Win 
-    // Check for Draw 
-    //  switch turns 
-
+    } 
 }
 
 function endGame(draw){
@@ -71,6 +86,7 @@ function isDraw(){
 function placeMark(cell, currentClass){
     cell.classList.add(currentClass)
 }
+
 function swapTurns(){
     circleTurn = !circleTurn
 }

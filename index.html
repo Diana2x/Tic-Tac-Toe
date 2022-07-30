@@ -10,7 +10,12 @@
   </head>
   <body>
     <h1>Tic-Tac-Toe</h1>
-    <div class="board" id="board">
+    <h2 id="round"></h2>
+    <div class="gameChoice">
+      <button id="pvp" class="gameButton">Player vs Player</button>
+      <button id="pvc" class="gameButton">Player vs Computer</button>
+    </div>
+    <div class="board histartGame()dden" id="board">
       <div class="cell" data-cell></div>
       <div class="cell" data-cell></div>
       <div class="cell" data-cell></div>
@@ -23,7 +28,12 @@
     </div>
     <div class="winning-message" id="winningMessage">
       <div data-winning-message-text></div>
-      <button id="restartButton">Restart</button>
+      <!--time out message-->
+      <div class="menuButtons">
+        <button id="restartButton">Restart</button>
+        <button id="menu">Menu</button>
+      </div>
+      <!-- Only to re-appear after 3 round win in PVC-->
     </div>
   </body>
 </html>
